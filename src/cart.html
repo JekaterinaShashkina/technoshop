@@ -8,8 +8,8 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="visually__hidden">Techno Shop магазин гаджетов</h1>
       <div class="container">
+        <h1 class="visually__hidden">Techno Shop магазин гаджетов</h1>
         <h2 class="visually__hidden">Заголовок сайта</h2>
         <a href="/">
           <img
@@ -67,7 +67,161 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section class="cart">
+        <div class="container cart__container">
+          <h2 class="visually__hidden">Корзина</h2>
+          <section class="cart-goods">
+            <h3 class="cart-goods__title">Корзина</h3>
+            <ul class="cart-goods__list">
+              <li class="cart-goods__item item">
+                <img src="img/MonitorAOC.jpg" alt="" class="item__img" />
+                <div class="item__detail">
+                  <h4 class="item__title">Монитор AOC 24G2U/BK</h4>
+                  <p class="item__vendor-code">Артикул: 654651968</p>
+                </div>
+                <div class="item__control">
+                  <div class="item__count">
+                    <button class="item__btn-dec">–</button>
+                    <output class="item__number">1</output>
+                    <button class="item__btn-inc">+</button>
+                  </div>
+
+                  <p class="item__price">20799 ₽</p>
+                  <button class="item__remove-cart">
+                    <svg>
+                      <use href="#remove" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+
+              <li class="cart-goods__item item">
+                <img src="img/watchCanyon.jpg" alt="" class="item__img" />
+                <h4 class="item__title">Смарт-часы CANYON Lollypop</h4>
+                <p class="item__vendor-code">Артикул: 654675757</p>
+
+                <div class="item__control">
+                  <div class="item__count">
+                    <button class="item__btn-dec">–</button>
+                    <output class="item__number">2</output>
+                    <button class="item__btn-inc">+</button>
+                  </div>
+
+                  <p class="item__price">24958 ₽</p>
+                  <button class="item__remove-cart">
+                    <svg>
+                      <use href="#remove" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li class="cart-goods__item item">
+                <img src="img/smartconsole.jpg" alt="" class="item__img" />
+                <h4 class="item__title">Смарт-приставка Selenga R1</h4>
+                <p class="item__vendor-code">Артикул: 724651960</p>
+
+                <div class="item__control">
+                  <div class="item__count">
+                    <button class="item__btn-dec">–</button>
+                    <output class="item__number">1</output>
+                    <button class="item__btn-inc">+</button>
+                  </div>
+
+                  <p class="item__price">7944 ₽</p>
+                  <button class="item__remove-cart">
+                    <svg>
+                      <use href="#remove" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="cart__address address">
+            <h3 class="cart__title">Адрес доставки</h3>
+
+            <form class="address__form">
+              <label
+                ><select
+                  class="address__item address__item_select"
+                  name="city"
+                  id=""
+                >
+                  <option value="" disabled selected>Город</option>
+                  <option value="Moscow">Москва</option>
+                  <option value="Saint Peterburg">Санкт-Петербург</option>
+                  <option value="Novosibirsk">Новосибирск</option>
+                  <option value="Kazan">Казань</option>
+                  <option value="Volgograd">Волгоград</option>
+                  <option value="Yekaterinburg">Екатеринбург</option>
+                </select></label
+              >
+
+              <label
+                ><input
+                  class="address__item"
+                  type="text"
+                  placeholder="Улица, дом"
+                />
+              </label>
+              <label
+                ><input
+                  class="address__item"
+                  type="text"
+                  placeholder="Квартира"
+                />
+              </label>
+              <label>
+                <input class="address__item" type="text" placeholder="ФИО" />
+              </label>
+              <label>
+                <input class="address__item" type="text" placeholder="Индекс" />
+              </label>
+              <button class="address__item address__item_btn">Сохранить</button>
+              <label class="address__label-save"
+                ><input type="checkbox" name="save-address" />Запомнить этот
+                адрес</label
+              >
+            </form>
+          </section>
+
+          <section class="cart__total">
+            <h3 class="visually-hidden">Итог</h3>
+            <ul class="total__table">
+              <li class="total__row total__row_header">
+                <span>Итого</span><span>41 222 ₽</span>
+              </li>
+              <li class="total__row total__row_grey">
+                <span>Товары, 3 шт.</span><span>41 222 ₽</span>
+              </li>
+              <li class="total__row total__row_grey">
+                <span>Скидка</span><span>0 ₽</span>
+              </li>
+              <li class="total__row total__row_grey">
+                <span>Доставка</span><span>0 ₽</span>
+              </li>
+              <li class="total__row">
+                <span>Дата</span><span>01 - 03 июля</span>
+              </li>
+              <li class="total__row"><span>Оплата</span><span>Картой</span></li>
+            </ul>
+
+            <div class="total__oorder">
+              <button class="total__submit">Оформить заказ</button>
+              <label class="total__agree"
+                ><input type="checkbox" name="agree" /><span
+                  >Согласен с
+                  <a class="total__agree-link" href="#">условиями</a> правил
+                  пользования торговой площадкой и&nbsp;правилами возврата</span
+                ></label
+              >
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="container">
         <h2 class="visually__hidden">Подвал сайта</h2>
@@ -206,5 +360,18 @@
         </div>
       </div>
     </footer>
+
+    <svg style="display: none" width="32" height="32">
+      <symbol
+        id="remove"
+        viewBox="0 0 32 33"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M25.3337 9.04667L23.4537 7.16667L16.0003 14.62L8.54699 7.16667L6.66699 9.04667L14.1203 16.5L6.66699 23.9533L8.54699 25.8333L16.0003 18.38L23.4537 25.8333L25.3337 23.9533L17.8803 16.5L25.3337 9.04667Z"
+        />
+      </symbol>
+    </svg>
   </body>
 </html>
