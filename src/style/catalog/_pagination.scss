@@ -1,2 +1,48 @@
 .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+
+  font-size: 18px;
+  line-height: 22px;
+  &__list {
+    gap: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  &__arrow {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    &[href=""] {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    &-start {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    transition: border-color 0.2s ease;
+    &_active {
+      border-color: $color-main;
+    }
+  }
 }

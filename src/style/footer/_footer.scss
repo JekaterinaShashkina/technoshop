@@ -52,4 +52,16 @@
       color: $color-main;
     }
   }
+  &__copyright {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    padding-bottom: 112px;
+    padding-top: 51px;
+    grid-column: 1;
+  }
+  &__design-by {
+    padding-top: 51px;
+    grid-column: 4;
+  }
 }
