@@ -3,4 +3,35 @@
     margin-bottom: 30px;
   }
   //*gridy 3 kolonki, odinakovie
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 340px;
+    gap: 30px;
+    padding-bottom: 111px;
+  }
+  &__item {
+    width: 340px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-grey;
+    padding-left: 10px;
+    border: 1px solid $color-primary;
+  }
+
+  &__item_btn {
+    color: $color-secondary;
+    background-color: $color-primary;
+  }
+  &__label-save {
+    grid-column: 3;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-grey;
+  }
+  &__label-save-input {
+    margin-right: 8px;
+  }
 }

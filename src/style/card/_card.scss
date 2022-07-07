@@ -15,7 +15,14 @@
   &__image {
     margin-bottom: 20px;
   }
-
+  &__slider-thumb-wrapper {
+    position: relative;
+    width: min-content;
+    margin: 0 auto;
+    .card__slider-thumb-scrollbar.swiper-scrollbar {
+      bottom: -10px;
+    }
+  }
   &__slider-thumb {
     max-width: 447px;
   }
@@ -24,6 +31,11 @@
     height: 120px;
     background-color: transparent;
     border: none;
+
+    &_active {
+      outline: 3px solid $color-main;
+      outline-offset: -3px;
+    }
   }
 
   &__title {
