@@ -1,8 +1,12 @@
 .recommended {
+  padding-bottom: 32px;
   &__title {
     font-weight: 700;
     font-size: 44px;
     line-height: 54px;
     margin-bottom: 10px;
+  }
+  &__btn {
+    color: $color-primary;
   }
 }

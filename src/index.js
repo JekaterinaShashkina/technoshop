@@ -8,6 +8,9 @@ import Swiper, { Thumbs, Scrollbar } from "swiper";
 // import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
+// import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 import { pagination } from "./modules/pagination";
 
 const paginationWrapper = document.querySelector(".pagination");
@@ -42,6 +45,10 @@ new Swiper(".card__image", {
 new Swiper(".recommended__carousel", {
   spaceBetween: 30,
   slidesPerView: 5,
+  slidesPerGroup: 5,
+  loop: true,
+  loopFillGroupWithBlank: true,
+
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar",
