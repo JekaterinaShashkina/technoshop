@@ -1,14 +1,24 @@
 .cart-goods {
-  &__list {
-  }
   &__item {
     max-width: 990px;
     margin-bottom: 30px;
     &:last-child {
       margin-bottom: 0;
     }
+    @include desktop {
+      max-width: 848px;
+    }
+    @include laptop {
+      max-width: 970px;
+    }
   }
   &__title {
     margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 }

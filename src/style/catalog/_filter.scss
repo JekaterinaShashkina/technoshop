@@ -1,7 +1,10 @@
 .filter {
   padding-top: 78px;
-
   max-width: 340px;
+
+  @include tablet {
+    display: none;
+  }
   &__form {
     position: relative;
   }
@@ -29,10 +32,27 @@
   &__flex {
     display: flex;
     gap: 10px;
+    justify-content: space-between;
     &_column {
       flex-direction: column;
       font-size: 16px;
       line-height: 20px;
+    }
+  }
+  &__label_select {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 33px;
+      top: 50%;
+      transform: translateY(calc(-50% - 2px)) rotate(45deg);
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: transparent $color-primary $color-primary transparent;
     }
   }
   &__input {
@@ -44,9 +64,14 @@
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid $color-primary;
+
+    @include laptop {
+      width: 145px;
+    }
     &_select {
       width: 100%;
       color: $color-grey;
+      appearance: none;
     }
 
     &::placeholder {
@@ -78,7 +103,5 @@
     color: $color-grey;
     border-color: transparent;
     border: none;
-  }
-  &__form {
   }
 }
