@@ -43,6 +43,7 @@
     transition: border-color 0.2s ease;
     &_active {
       border-color: $color-main;
+      pointer-events: none;
     }
   }
 }

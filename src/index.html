@@ -22,8 +22,8 @@
             class="header__logo"
           />
         </a>
-        <form class="header__search search">
-          <input type="search" class="search__input" />
+        <form action="/" class="header__search search">
+          <input type="search" class="search__input" name="search" />
           <button class="search__button" aria-label="Search on site">
             <svg
               width="24"
@@ -92,15 +92,17 @@
                         ><input
                           class="filter__input"
                           type="number"
-                          name="price-start"
+                          name="minprice"
                           placeholder="от"
+                          step="any"
                       /></label>
                       <label
                         ><input
                           class="filter__input"
                           type="number"
-                          name="price-end"
+                          name="maxprice"
                           placeholder="до"
+                          step="any"
                       /></label>
                     </div>
                   </fieldset>
@@ -111,13 +113,9 @@
                       ><select
                         name="category"
                         class="filter__input filter__input_select"
+                        id="category"
                       >
-                        <option value="all" selected>Все категории</option>
-                        <option value="phone">Смартфоны</option>
-                        <option value="tab">Планшеты</option>
-                        <option value="smartwatch">Умные часы</option>
-                        <option value="monoblock">Моноблоки</option>
-                        <option value="notebook">Ноутбуки</option>
+                        <option value="" selected>Все категории</option>
                       </select>
                     </label>
                   </fieldset>
@@ -128,16 +126,18 @@
                       <label
                         ><input
                           type="number"
-                          name="diagonal-start"
+                          name="mindisplay"
                           placeholder="от"
                           class="filter__input"
+                          step="any"
                       /></label>
                       <label
                         ><input
                           type="number"
-                          name="diagonal-end"
+                          name="maxdisplay"
                           placeholder="до"
                           class="filter__input"
+                          step="any"
                       /></label>
                     </div>
                   </fieldset>

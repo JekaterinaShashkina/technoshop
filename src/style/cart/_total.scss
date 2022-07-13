@@ -1,13 +1,30 @@
 .total {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 25px;
   @include mobile {
-    position: relative;
-    left: -10px;
-    width: 320px;
-    border-width: 1px 0;
-    border-color: $color-grey;
-    border-style: solid;
-    border-radius: 0;
-    padding: 15px 10px 25px;
+    border: 0;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc((100vw - 100%) / -2);
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: $color-primary;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: calc((100vw - 100%) / -2);
+      bottom: 0;
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: $color-primary;
+    }
   }
   &__wrapper {
     border: 1px solid $color-grey;
@@ -57,12 +74,22 @@
 
       @include mobile {
         position: relative;
-        left: -10px;
-        width: 320px;
         padding-bottom: 4px;
         margin-bottom: 14px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-bottom: 0;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: calc((100vw - 100%) / -2);
+          bottom: 0;
+          display: block;
+          width: 100vw;
+          height: 1px;
+          background-color: $color-grey-light;
+        }
       }
     }
     &_grey {
