@@ -4,6 +4,16 @@
 
   @include tablet {
     display: none;
+    position: absolute;
+    background-color: $color-secondary;
+    top: 0;
+    right: 0;
+    z-index: 555;
+    padding: 14px 20px 26px;
+
+    &_show {
+      display: block;
+    }
   }
   &__form {
     position: relative;
@@ -13,6 +23,24 @@
     font-size: 26px;
     line-height: 32px;
     margin-bottom: 30px;
+
+    @include tablet {
+      display: flex;
+      font-size: 22px;
+      line-height: 27px;
+      align-items: center;
+      gap: 5px;
+      justify-content: flex-end;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-image: url("img/arrow-down.svg");
+        transform: rotate(180deg);
+      }
+    }
   }
   &__fields-list {
     margin-bottom: 40px;
@@ -92,6 +120,10 @@
     background-color: $color-primary;
     padding: 8px 20px;
     border: none;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
   }
   &__reset {
     position: absolute;
@@ -103,5 +135,11 @@
     color: $color-grey;
     border-color: transparent;
     border: none;
+
+    @include tablet {
+      position: static;
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
