@@ -72,7 +72,11 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
+    transition: color 0.36s ease-in-out;
 
+    &:hover svg {
+      color: $color-main-sub;
+    }
     @include mobile {
       font-size: 14px;
       line-height: 17px;
@@ -81,6 +85,11 @@
 
   &__cart {
     position: relative;
+    transition: color 0.36s ease-in-out;
+
+    &:hover svg {
+      color: $color-main-sub;
+    }
 
     &::after {
       content: attr(data-count);

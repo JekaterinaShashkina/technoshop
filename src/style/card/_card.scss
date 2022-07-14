@@ -75,6 +75,12 @@
     background-color: transparent;
     font-size: 30px;
     line-height: 100%;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-main;
+      border-color: $color-main;
+    }
   }
   &__number {
     font-size: 30px;
@@ -95,6 +101,16 @@
     color: $color-secondary;
     background-color: $color-main;
     border: none;
+    transition: color 0.3s ease-in-out;
+
+    &:focus,
+    :hover {
+      background-color: $color-main-sub;
+    }
+    &:active {
+      background-color: $color-main;
+      border: 3px solid $color-primary;
+    }
   }
   &__params-list {
     font-weight: 500;

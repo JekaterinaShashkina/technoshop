@@ -1,4 +1,11 @@
 .social {
   display: flex;
   gap: 20px;
+
+  &__item {
+    transition: color 0.36s ease-in-out;
+    &:hover svg {
+      color: $color-main;
+    }
+  }
 }

@@ -120,6 +120,14 @@
     background-color: $color-primary;
     padding: 8px 20px;
     border: none;
+    transition: background-color 0.36s ease-in-out;
+
+    &:focus {
+      background-color: $color-main-sub;
+    }
+    &:hover {
+      background-color: $color-main;
+    }
 
     @include tablet {
       margin-bottom: 15px;
