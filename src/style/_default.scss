@@ -90,6 +90,7 @@ fieldset {
 }
 
 .main {
+  position: relative;
   padding-top: 44px;
   padding-bottom: 120px;
   @include tablet {
@@ -113,4 +114,19 @@ fieldset {
 
 .swiper-slide {
   height: 100% !important;
+}
+
+.preload {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-color: $color-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    transform: rotate(0);
+    animation: rotation 1s infinite linear;
+  }
 }

@@ -1,3 +1,6 @@
+import { serviceCounter } from "./counterControl";
+import { API_URI } from "./var";
+
 const addToCart = (id, count = 1) => {
   const cartGoods = localStorage.getItem("cart-ts")
     ? JSON.parse(localStorage.getItem("cart-ts"))
@@ -53,7 +56,12 @@ const checkItems = ({ classDelete, classAdd, classCount } = {}) => {
   }
 };
 
-export const cartControl = ({ wrapper, classAdd, classDelete, classCount }) => {
+export const cartControl = ({
+  wrapper,
+  classAdd,
+  classDelete,
+  classCount,
+} = {}) => {
   checkItems({ classDelete, classAdd, classCount });
 
   if (wrapper && classAdd && classDelete) {
@@ -84,4 +92,95 @@ export const cartControl = ({ wrapper, classAdd, classDelete, classCount }) => {
       checkItems();
     });
   }
+};
+
+export const renderCart = (goods, cartGoods) => {
+  const cartGoodsList = document.querySelector(".cart-goods__list");
+  cartGoodsList.textContent = "";
+
+  goods.forEach((item) => {
+    const li = document.createElement("li");
+    li.classList.add("cart-goods__item", "item");
+    const img = new Image(200, 200);
+    img.className = "item__img";
+
+    img.src = `${API_URI}${item.images.present}`;
+    img.alt = item.title;
+
+    const detail = document.createElement("div");
+    detail.className = "item__detail";
+
+    const title = document.createElement("h4");
+    title.className = "item__title";
+    title.textContent = item.title;
+
+    const vendor = document.createElement("p");
+    vendor.className = "item__vendor-code";
+    vendor.textContent = `Артикул: ${item.id}`;
+
+    const control = document.createElement("div");
+    control.className = "item__control";
+
+    const count = document.createElement("div");
+    count.className = "item__count";
+    count.dataset.idGoods = item.id;
+
+    const dec = document.createElement("button");
+    dec.className = "item__btn item__btn-dec";
+    dec.textContent = "–";
+
+    const number = document.createElement("output");
+    number.className = "item__number";
+    number.value = cartGoods[item.id];
+
+    const inc = document.createElement("button");
+    inc.className = "item__btn item__btn-inc";
+    inc.textContent = "+";
+
+    count.append(dec, number, inc);
+
+    const price = document.createElement("p");
+    price.className = "item__price";
+    price.textContent = new Intl.NumberFormat("ru-RU", {
+      style: "currency",
+      currency: "RUB",
+      maximumFractionDigits: 0,
+    }).format(item.price);
+
+    const remove = document.createElement("button");
+    remove.className = "item__remove-cart";
+    remove.innerHTML = `     
+          <svg>
+            <use href="#remove" />
+          </svg>
+          `;
+
+    detail.append(title, vendor);
+
+    control.append(count, price, remove);
+    li.append(img, detail, control);
+
+    cartGoodsList.append(li);
+
+    serviceCounter({
+      wrapper: count,
+      number,
+      selectorDec: ".item__btn-dec",
+      selectorInc: ".item__btn-inc",
+    });
+
+    count.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target.closest(".item__btn-dec, .item__btn-inc")) {
+        addToCart(item.id, +number.value);
+        checkItems();
+      }
+    });
+
+    remove.addEventListener("click", () => {
+      removeFromCart(item.id);
+      li.remove();
+      checkItems();
+    });
+  });
 };
